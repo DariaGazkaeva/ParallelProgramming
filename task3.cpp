@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
 
     printf("Before first - a: %d, b: %d \n", a, b);
 
-#pragma omp parallel num_threads(2) private(a) firstprivate(b)
+    #pragma omp parallel num_threads(2) private(a) firstprivate(b)
     {
         int num = omp_get_thread_num();
         a += num;
@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
     printf("Before second - a: %d, b: %d \n", a, b);
 
-#pragma omp parallel num_threads(4) shared(a) private(b)
+    #pragma omp parallel num_threads(4) shared(a) private(b)
     {
         int num = omp_get_thread_num();
         a -= num;
