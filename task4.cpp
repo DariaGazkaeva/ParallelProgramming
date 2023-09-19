@@ -9,7 +9,7 @@ int main() {
     int minA = INT_MAX;
     int maxB = INT_MIN;
 
-#pragma omp parallel num_threads(2)
+    #pragma omp parallel num_threads(2)
     {
         int num = omp_get_thread_num();
 
