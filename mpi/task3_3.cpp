@@ -58,7 +58,6 @@ int main(int argc, char** argv) {
         result = new float[n];
     }
 
-
     MPI_Gather(res, n / size, MPI_FLOAT, result, n / size, MPI_FLOAT, 0, MPI_COMM_WORLD);
 
     if (rank == 0) {
@@ -68,4 +67,5 @@ int main(int argc, char** argv) {
         }
     }
     MPI_Finalize();
+    return 0;
 }

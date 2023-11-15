@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
     int const n = 100;
-    int const block = 10;
+    int const block = n / size;
     float vector[n];
     float part[block];
 
@@ -46,6 +46,6 @@ int main(int argc, char** argv) {
     if (rank == 0) {
         printf("%0.1f", res);
     }
-
     MPI_Finalize();
+    return 0;
 }

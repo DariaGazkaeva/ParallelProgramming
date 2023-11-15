@@ -57,4 +57,5 @@ int main(int argc, char** argv) {
         printf("Norm: %0.1f", result);
     }
     MPI_Finalize();
+    return 0;
 }

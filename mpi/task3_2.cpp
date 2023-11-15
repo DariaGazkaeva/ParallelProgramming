@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
     int const n = 100;
-    int const block = 10;
+    int const block = n / size;
     float x[n];
     float x_part[block];
     float y[n];
@@ -48,4 +48,5 @@ int main(int argc, char **argv) {
         printf("Scalar product: %0.1f", result);
     }
     MPI_Finalize();
+    return 0;
 }
